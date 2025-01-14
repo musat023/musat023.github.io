@@ -51,6 +51,7 @@ main {
     padding: 10px;
     text-align: center;
     width: 150px;
+    justify-content: center;
 }
 
 .product img {
