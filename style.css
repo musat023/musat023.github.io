@@ -57,7 +57,9 @@ main {
     height: 150px;
     border-radius: 5px;
 }
-
+.image-container{
+   display: block; 
+}
 button {
     background: #28a745;
     border: none;
