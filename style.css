@@ -36,6 +36,7 @@ main {
     padding: 20px;
     color: #fff;
     justify-content: center;
+    text-align: center;
 }
 
 #products {
