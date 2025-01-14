@@ -3,26 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Vizitka</title>
-    <link rel="stylesheet" href="style.css">
+    <title>Shopping Site</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <div class="card">
-        <div class="card-inner">
-            <div class="card-front">
-                <img src="https://via.placeholder.com/80" alt="Profilová fotka">
-                <div class="name">X XXX</div>
+    <header>
+        <h1>Shopping Site</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#products">Products</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="home">
+            <h2>Welcome to Our Store</h2>
+            <p>best products with best prices</p>
+        </section>
+
+        <section id="products">
+            <h2>Our Products</h2>
+            <div class="product">
+                <h3>Product 1</h3>
+                <p>Description of product 1.</p>
+                <button>Add to Cart</button>
             </div>
-            <div class="card-back">
-                <div class="info">
-                    <p>x.xxx@xxx.xxx</p>
-                    <p><a href="#" target="_blank">xxx.github.io</a></p>
-                    <p>+420 xxx xxx xxx</p>
-                    <p>XXXX</p>
-                </div>
-                <div class="footer"></div>
+            <div class="product">
+                <h3>Product 2</h3>
+                <p>Description of product 2.</p>
+                <button>Add to Cart</button>
             </div>
-        </div>
-    </div>
+            <div class="product">
+                <h3>Product 3</h3>
+                <p>Description of product 3.</p>
+                <button>Add to Cart</button>
+            </div>
+        </section>
+
+        <section id="contact">
+            <h2>Contact Us</h2>
+            <p>Email: musat.isik023@skolavdf.cz</p>
+            <p>Phone: +123 456 7890</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Shopping Site</p>
+    </footer>
 </body>
 </html>
