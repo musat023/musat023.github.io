@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Bageterie Boulevard — Průvodka k rozmrazení surovin</title>
+<link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="wrap">
+
+  <div class="header">
+    <div class="logo">❄</div>
+    <div>
+      <h1>BAGETERIE BOULEVARD</h1>
+      <p>Průvodka k rozmrazení surovin</p>
+    </div>
+  </div>
+
+  <div class="stats">
+    <div class="stat total"><div class="icon">❄</div><div><div class="num" id="stat-active">0</div><div class="lbl">Aktivní</div></div></div>
+    <div class="stat ok"><div class="icon">✓</div><div><div class="num" id="stat-ok">0</div><div class="lbl">V pořádku</div></div></div>
+    <div class="stat soon"><div class="icon">⚠</div><div><div class="num" id="stat-soon">0</div><div class="lbl">Brzy expiruje</div></div></div>
+    <div class="stat expired"><div class="icon">⚠</div><div><div class="num" id="stat-expired">0</div><div class="lbl">Expirováno</div></div></div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-head">
+      <h2>Vyjmout z mrazáku</h2>
+      <div style="display:flex;gap:8px;align-items:center;">
+        <input class="search" id="search" placeholder="Hledat surovinu…">
+        <button class="btn" id="add-custom-btn">+ Přidat surovinu</button>
+      </div>
+    </div>
+    <div class="grid" id="product-grid"></div>
+  </div>
+
+  <div class="panel" id="summary-panel" style="display:none;">
+    <div class="panel-head">
+      <h2>Souhrn podle suroviny (aktivní)</h2>
+    </div>
+    <div class="summary-grid" id="summary-grid"></div>
+  </div>
+
+  <div class="panel">
+    <div class="panel-head">
+      <h2>Průvodka k rozmrazení</h2>
+      <div class="tabs">
+        <button data-tab="active" class="active">Aktivní</button>
+        <button data-tab="all">Vše</button>
+        <button data-tab="done">Spotřebováno</button>
+      </div>
+    </div>
+    <div class="day-tabs" id="day-tabs"></div>
+    <div class="day-toolbar" id="day-toolbar"></div>
+    <div id="log-container"></div>
+    <div class="empty" id="log-empty" style="display:none;">Žádné položky.</div>
+  </div>
+
+</div>
+
+<div class="overlay" id="overlay">
+  <div class="modal">
+    <div class="modal-head">
+      <h3 id="modal-name">—</h3>
+      <button class="modal-close" id="modal-close">✕</button>
+    </div>
+    <div id="modal-name-edit" style="display:none;margin-bottom:14px;">
+      <div class="modal-label">Název suroviny</div>
+      <input class="qty-input" id="custom-name-input" type="text" style="text-align:left;font-weight:600;font-size:14px;padding:0 12px;" placeholder="Např. Máslo">
+    </div>
+    <div class="modal-dur" id="modal-dur-static">⏱ Doba spotřeby: <b id="modal-dur-label">—</b></div>
+    <div id="modal-dur-edit" style="display:none;margin-bottom:18px;">
+      <div class="modal-label">Doba spotřeby (hodin)</div>
+      <input class="qty-input" id="custom-hours-input" type="number" min="1" style="text-align:left;padding:0 12px;" value="48">
+    </div>
+
+    <div class="modal-label">Počet ks</div>
+    <div class="qty-row">
+      <button class="qty-btn" id="qty-minus">−</button>
+      <input class="qty-input" id="qty-input" type="text" inputmode="numeric" value="1" readonly>
+      <button class="qty-btn" id="qty-plus">+</button>
+    </div>
+
+    <div class="modal-label">Datum a čas vyjmutí</div>
+    <div class="qty-row">
+      <input class="qty-input" id="modal-date-input" type="date" style="text-align:left;padding:0 12px;flex:1.3;">
+      <input class="qty-input" id="modal-time-input" type="time" style="text-align:left;padding:0 12px;flex:1;">
+    </div>
+
+    <div class="modal-preview">
+      <div class="pline">
+        <div class="plabel">Vyjmuto z mrazáku</div>
+        <div class="pvalue" id="preview-removed">—</div>
+      </div>
+      <div class="pline">
+        <div class="plabel">Spotřebovat do</div>
+        <div class="pvalue" id="preview-due">—</div>
+      </div>
+    </div>
+
+    <div class="modal-actions">
+      <button class="btn" id="modal-cancel">Zrušit</button>
+      <button class="btn primary" id="modal-confirm">Potvrdit</button>
+    </div>
+  </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
